@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <title>welcome to {{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://c40cf18f.ngrok.io/css/style.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+</head>
+
+<body>
+    <form action="/folderinfo/{{data1}}" method="post" enctype="multipart/form-data">
+    <div id="myDIV" class="header">
+        <h1>{{ title }}</h1>
+    </div>
+    <div>
+        <h3 style="padding-left: 2%;padding-right: 2%;display: inline-block;">Uploadding File To Particular Folder </h3>
+        <input type="file" name="sampleFile" style="display: inline-block;">
+        <input type="submit" value="Upload!" style="display: inline-block;margin-left: 50%;">
+    </div>
+        <ul class="ul-style">
+            {% for item in data %}
+            <li>
+                <br> <span class="glyphicon glyphicon-file"> {{ item.name }} </span>
+                <button><a href="/file-update/{{item.id}}"> Update </a> </button>
+                <button><a href="/file-delete/{{item.id}}">Delete</a></button>
+                <a href="/download/{{item.id}}"> Download </a>
+                <br>
+            </li>
+            {% endfor %}
+        </ul>
+    </form>
+</body>
+
+</html>

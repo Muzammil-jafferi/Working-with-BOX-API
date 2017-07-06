@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <title>welcome to {{ title }}</title>
+    <link rel="stylesheet" type="text/css" href="https://c40cf18f.ngrok.io/css/style.css">
+</head>
+
+<body>
+    <div id="myDIV" class="header">
+        <h1>{{ title }}</h1>
+    </div>
+    <!--  <a href="/logout"> Logout</a> -->
+    <br>
+    <form action="/folderupdate/{{data}}" method="post"> <br>
+        <div >
+            Folder Name :
+            <input type="text" name="name" />
+            <br>  <br>Description :
+            <input type="text" name="description" /><br> <br>
+            <button id="button2">Save</button>
+            <br>
+        </div>
+    </form>
+</body>
+
+</html>

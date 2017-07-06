@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <title>welcome to {{ title }}</title>
+    <link rel="stylesheet" type="text/css" href="https://c40cf18f.ngrok.io/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+    function submit(){
+        window.open('https://account.box.com/api/oauth2/authorize?client_id=wfnz1pdu3uvjwt9j30s9nvms0tg1hxyd&client_secret=oyOfGOKJDFV2yYhiEnqfYVuhCf7Rpx2E&response_type=code')
+    }
+</script>
+</head>
+
+<body>
+    
+    
+    <button onclick="submit()">Login to BOX</button>
+     {% if error %}
+        <label>{{error}} </label>
+        {% endif %}
+   
+</body>
+
+</html>
